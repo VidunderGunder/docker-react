@@ -1,10 +1,27 @@
-import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [bunData, setBunData] = useState("");
+  const [expressData, setExpressData] = useState("");
+  const [dotnetData, setDotnetData] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:6969")
+      .then((response) => response.text())
+      .then((data) => setBunData(data))
+      .catch((error) => console.error("Error:", error));
+    fetch("http://localhost:8080")
+      .then((response) => response.text())
+      .then((data) => setExpressData(data))
+      .catch((error) => console.error("Error:", error));
+    fetch("http://localhost:5124/deez")
+      .then((response) => response.text())
+      .then((data) => setDotnetData(data))
+      .catch((error) => console.error("Error:", error));
+  }, []);
 
   return (
     <>
@@ -17,17 +34,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>{bunData}</p>
+      <p>{expressData}</p>
+      <p>{dotnetData}</p>
     </>
   );
 }
