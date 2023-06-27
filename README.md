@@ -29,3 +29,10 @@ bun docker:build
 ```bash
 bun docker:run
 ```
+
+
+## 🎭 Playwright
+
+```bash
+npx playwright codegen http://localhost:3000
+```
