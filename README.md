@@ -1,6 +1,6 @@
 # Docker React
 
-Me getting familiar with Docker.
+Me getting familiar with Docker
 
 ## 🚀 Getting Started
 
