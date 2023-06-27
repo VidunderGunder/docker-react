@@ -16,7 +16,11 @@ pnpm i
 pnpm dev
 ```
 
+Go to http://localhost:3000
+
 ## 🐳 Docker
+
+Install [Docker](https://www.docker.com/)
 
 ```bash
 bun docker:build
