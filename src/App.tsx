@@ -17,7 +17,7 @@ function App() {
       .then((response) => response.text())
       .then((data) => setExpressData(data))
       .catch((error) => console.error("Error:", error));
-    fetch("http://localhost:5124/deez")
+    fetch("http://localhost:5124/hello")
       .then((response) => response.text())
       .then((data) => setDotnetData(data))
       .catch((error) => console.error("Error:", error));
